@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NutriCare - Healthy Food for Every Condition</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f7faf7;
+            color: #26352b;
+            line-height: 1.6;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #ffffff;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        .logo span {
+            color: #ff9800;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #2e7d32;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 600px;
+            padding: 80px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background: linear-gradient(135deg, #e8f5e9, #fff8e1);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            line-height: 1.15;
+            color: #1b5e20;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: #f57c00;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #56635a;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2e7d32;
+            color: white;
+            padding: 13px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1b5e20;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: #c8e6c9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 150px;
+            box-shadow: 0 15px 40px rgba(46,125,50,0.2);
+        }
+
+        /* ================= SECTION ================= */
+
+        .section {
+            padding: 75px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #1b5e20;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #68746c;
+        }
+
+        /* ================= CONDITION CARDS ================= */
+
+        .conditions {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .condition-card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            transition: 0.3s;
+            border: 1px solid #edf2ed;
+        }
+
+        .condition-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(46,125,50,0.15);
+        }
+
+        .condition-icon {
+            width: 75px;
+            height: 75px;
+            margin: auto;
+            margin-bottom: 18px;
+            border-radius: 50%;
+            background: #e8f5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+        }
+
+        .condition-card h3 {
+            margin-bottom: 10px;
+            color: #2e7d32;
+        }
+
+        .condition-card p {
+            font-size: 14px;
+            color: #6d756e;
+            margin-bottom: 18px;
+        }
+
+        .small-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #f1f8f2;
+            color: #2e7d32;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* ================= FOOD SECTION ================= */
+
+        .food-section {
+            background: #ffffff;
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .food-card {
+            overflow: hidden;
+            background: #f9fbf9;
+            border-radius: 18px;
+            border: 1px solid #e5ebe5;
+            transition: 0.3s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .food-image {
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+            background: #e8f5e9;
+        }
+
+        .food-info {
+            padding: 20px;
+        }
+
+        .food-info h3 {
+            color: #2e7d32;
+            margin-bottom: 7px;
+        }
+
+        .food-info p {
+            color: #6b756e;
+            font-size: 14px;
+        }
+
+        /* ================= SEARCH ================= */
+
+        .search-box {
+            max-width: 650px;
+            margin: 0 auto 40px;
+            display: flex;
+            background: white;
+            padding: 8px;
+            border-radius: 35px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 12px 20px;
+            font-size: 16px;
+        }
+
+        .search-box button {
+            border: none;
+            background: #2e7d32;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ================= WHY US ================= */
+
+        .why-us {
+            background: #e8f5e9;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            margin: 70px 7%;
+            padding: 60px 30px;
+            border-radius: 25px;
+            text-align: center;
+            background: linear-gradient(135deg, #2e7d32, #66bb6a);
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: auto auto 25px;
+        }
+
+        .cta .btn {
+            background: white;
+            color: #2e7d32;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #1b2b1e;
+            color: #d5ded6;
+            padding: 50px 7% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 35px;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #b9c4bb;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: #b9c4bb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #3c493e;
+            padding-top: 20px;
+            font-size: 13px;
+            color: #9eaaa0;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            .conditions,
+            .food-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-image {
+                width: 320px;
+                height: 320px;
+                font-size: 110px;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 5%;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-image {
+                width: 250px;
+                height: 250px;
+                font-size: 90px;
+            }
+
+            .conditions,
+            .food-grid,
+            .features,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 55px 5%;
+            }
+
+            .cta {
+                margin: 50px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+        <div class="logo">
+            Nutri<span>Care</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#conditions">Conditions</a>
+            <a href="#foods">Foods</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <h1>
+                Eat Smart.<br>
+                <span>Live Healthy.</span>
+            </h1>
+
+            <p>
+                Discover nutritious food choices and meal ideas
+                organized around common health conditions.
+            </p>
+
+            <a href="#conditions" class="btn">
+                Explore Diet Plans
+            </a>
+        </div>
+
+        <div class="hero-image">
+            🥗
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONDITIONS ================= -->
+
+    <section class="section" id="conditions">
+
+        <div class="section-title">
+            <h2>Choose Your Health Goal</h2>
+            <p>
+                Explore food information related to different health conditions.
+            </p>
+        </div>
+
+        <div class="conditions">
+
+            <div class="condition-card">
+                <div class="condition-icon">🩸</div>
+                <h3>Diabetes</h3>
+                <p>
+                    Learn about balanced food choices and carbohydrate-conscious meals.
+                </p>
+                <a href="#foods" class="small-btn">View Foods</a>
+            </div>
+
+            <div class="condition-card">
+                <div class="condition-icon">❤️</div>
+                <h3>Heart Health</h3>
+                <p>
+                    Explore foods commonly included in heart-conscious eating patterns.
+                </p>
+                <a href="#foods" class="small-btn">View Foods</a>
+            </div>
+
+            <div class="condition-card">
+                <div class="condition-icon">🦋</div>
+                <h3>Thyroid</h3>
+                <p>
+                    Discover nutritious foods and meal ideas for a balanced diet.
+                </p>
+                <a href="#foods" class="small-btn">View Foods</a>
+            </div>
+
+            <div class="condition-card">
+                <div class="condition-icon">🩺</div>
+                <h3>Blood Pressure</h3>
+                <p>
+                    Find food choices that can fit into a lower-sodium eating pattern.
+                </p>
+                <a href="#foods" class="small-btn">View Foods</a>
+            </div>
+
+            <div class="condition-card">
+                <div class="condition-icon">⚖️</div>
+                <h3>Weight Management</h3>
+                <p>
+                    Explore nutrient-dense foods that can support balanced meals.
+                </p>
+                <a href="#foods" class="small-btn">View Foods</a>
+            </div>
+
+            <div class="condition-card">
+                <div class="condition-icon">🦴</div>
+                <h3>Bone Health</h3>
+                <p>
+                    Explore foods containing nutrients important for bone health.
+                </p>
+                <a href="#foods" class="small-btn">View Foods</a>
+            </div>
+
+            <div class="condition-card">
+                <div class="condition-icon">🌾</div>
+                <h3>Digestive Health</h3>
+                <p>
+                    Discover foods and meal ideas that may fit different digestive needs.
+                </p>
+                <a href="#foods" class="small-btn">View Foods</a>
+            </div>
+
+            <div class="condition-card">
+                <div class="condition-icon">🥬</div>
+                <h3>General Wellness</h3>
+                <p>
+                    Build balanced meals with a variety of nutritious whole foods.
+                </p>
+                <a href="#foods" class="small-btn">View Foods</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOD SECTION ================= -->
+
+    <section class="section food-section" id="foods">
+
+        <div class="section-title">
+            <h2>Healthy Food Choices</h2>
+            <p>
+                Browse some nutritious foods that can be part of a balanced diet.
+            </p>
+        </div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                placeholder="Search for a food..."
+                id="foodSearch"
+            >
+
+            <button onclick="searchFood()">
+                Search
+            </button>
+        </div>
+
+        <div class="food-grid" id="foodGrid">
+
+            <div class="food-card">
+                <div class="food-image">🥦</div>
+                <div class="food-info">
+                    <h3>Broccoli</h3>
+                    <p>
+                        A nutrient-rich vegetable containing fiber,
+                        vitamin C and vitamin K.
+                    </p>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-image">🥑</div>
+                <div class="food-info">
+                    <h3>Avocado</h3>
+                    <p>
+                        Provides fiber and unsaturated fats along with
+                        several vitamins and minerals.
+                    </p>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-image">🫐</div>
+                <div class="food-info">
+                    <h3>Blueberries</h3>
+                    <p>
+                        A fruit containing fiber and various
+                        antioxidant compounds.
+                    </p>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-image">🥣</div>
+                <div class="food-info">
+                    <h3>Oats</h3>
+                    <p>
+                        A whole grain that provides carbohydrates,
+                        fiber and protein.
+                    </p>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-image">🥕</div>
+                <div class="food-info">
+                    <h3>Carrots</h3>
+                    <p>
+                        A vegetable rich in beta-carotene and
+                        dietary fiber.
+                    </p>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-image">🐟</div>
+                <div class="food-info">
+                    <h3>Fish</h3>
+                    <p>
+                        Many fish varieties provide high-quality
+                        protein and important nutrients.
+                    </p>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-image">🥜</div>
+                <div class="food-info">
+                    <h3>Nuts</h3>
+                    <p>
+                        Nuts provide protein, fiber and predominantly
+                        unsaturated fats.
+                    </p>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-image">🍎</div>
+                <div class="food-info">
+                    <h3>Apple</h3>
+                    <p>
+                        A convenient fruit providing carbohydrates,
+                        fiber and various micronutrients.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY US ================= -->
+
+    <section class="section why-us" id="about">
+
+        <div class="section-title">
+            <h2>Why NutriCare?</h2>
+            <p>
+                Simple tools to help you learn about healthier food choices.
+            </p>
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">🥗</div>
+                <h3>Food Information</h3>
+                <p>
+                    Learn about nutrients and food categories
+                    in an easy-to-understand format.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📋</div>
+                <h3>Condition Based</h3>
+                <p>
+                    Browse information organized around
+                    different health conditions.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Responsive Design</h3>
+                <p>
+                    Access the website comfortably on phones,
+                    tablets and desktop devices.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <h2>Start Making Healthier Choices</h2>
+
+        <p>
+            Explore food information and build your understanding
+            of balanced nutrition.
+        </p>
+
+        <a href="#conditions" class="btn">
+            Explore Now
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h3>NutriCare</h3>
+                <p>
+                    A simple nutrition website concept designed
+                    to help users explore food information
+                    based on different health conditions.
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#conditions">Conditions</a></li>
+                    <li><a href="#foods">Foods</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Important</h3>
+                <p>
+                    Food needs can vary between individuals.
+                    Consult a qualified healthcare professional
+                    for personalized dietary advice.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 NutriCare. All rights reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function searchFood() {
+
+            const input =
+                document.getElementById("foodSearch")
+                .value
+                .toLowerCase();
+
+            const cards =
+                document.querySelectorAll(".food-card");
+
+            cards.forEach(function(card) {
+
+                const foodName =
+                    card.querySelector("h3")
+                    .textContent
+                    .toLowerCase();
+
+                if (foodName.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+
+            });
+        }
+
+        // Search while typing
+        document
+            .getElementById("foodSearch")
+            .addEventListener("keyup", searchFood);
+
+    </script>
+
+</body>
+</html>
